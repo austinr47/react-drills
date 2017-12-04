@@ -26,7 +26,6 @@ class App extends Component {
         </div>
         <p className="App-intro">
           <input onChange = {event => this.updateText(event.target.value)}/>
-          {console.log(this.state.boxText)}
         </p>
         <div> 
           <p>
