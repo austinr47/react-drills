@@ -3,7 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      arrData: ['spaghetti', 'ice cream', 'sushi', 'bolona', 'cheese']
+    }
+  }
+
+
   render() {
+    let displayArr = this.state.arrData.map((item, index) =>{
+      return(
+      <h2 key = {index} > {item}</h2>
+    )
+    })
+  
+
+
     return (
       <div className="App">
         <div className="App-header">
@@ -11,11 +27,12 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          {displayArr}
         </p>
       </div>
     );
   }
 }
+
 
 export default App;
