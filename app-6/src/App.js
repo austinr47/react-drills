@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ToDo from './ToDo'
 
 class App extends Component {
   render() {
@@ -11,8 +12,12 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          My to-do list:
         </p>
+        <p>
+          <ToDo />
+        </p>
+        
       </div>
     );
   }
