@@ -20,25 +20,32 @@ handleUserInput(props) {
 
 addToList() {
     this.setState({
-        list: [this.state.userInput]
+        list: this.state.userInput
     })
-
 }
 
+
+createList() {
+    let arr = []
+    arr.push(this.state.userInput)
+    this.setState({
+        list : arr
+    })
+}
     render() {
-        let displayList = this.state.list.map((item, index) => {
-    return(
-        <h2 key={index}> {item}</h2>
-    )
-        })
+        let displayList = {createList}
+        
+
 
         return (
             <div>
             <input onChange={event => this.handleUserInput(event.target.value)} value={this.state.userInput}/>
-            <button onClick={this.addToList}> Add </button>
+            <button onClick={this.createList}> Add </button>
 
             <p>
                 {displayList}
+            </p>
+            <p>
                 {JSON.stringify(this.state)}
             </p>
           </div>
