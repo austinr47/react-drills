@@ -10,6 +10,7 @@ class ToDo extends Component {
 
         this.handleUserInput = this.handleUserInput.bind(this)
         this.addToList = this.addToList.bind(this)
+        this.createList = this.createList.bind(this)
     }
 
 handleUserInput(props) {
@@ -29,13 +30,15 @@ createList() {
     let arr = []
     arr.push(this.state.userInput)
     this.setState({
-        list : arr
+        list: arr
     })
 }
     render() {
-        let displayList = {createList}
-        
-
+        let list = this.state.list.map( ( element, index ) => {
+            return (
+              <userInput key = { index } task={ element } />
+            )
+          })
 
         return (
             <div>
@@ -43,7 +46,7 @@ createList() {
             <button onClick={this.createList}> Add </button>
 
             <p>
-                {displayList}
+                {list}
             </p>
             <p>
                 {JSON.stringify(this.state)}
